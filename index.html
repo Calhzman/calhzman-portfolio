@@ -61,14 +61,20 @@
 
     <!-- Contact -->
     <section id="contact" class="section gray">
-        <h2>Contact</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+    <h2>Contact</h2>
+
+    <form action="https://formsubmit.co/edarieseo@email.com" method="POST">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Portfolio Message">
+
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
     <!-- Footer -->
     <footer>
@@ -77,3 +83,4 @@
 
 </body>
 </html>
+
