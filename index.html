@@ -1,56 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    html, body {
-      background-image: url('backgrounder.jpg'); /* Corrected syntax */
-      background-size: cover; /* Make the image cover the entire background */
-      background-repeat: no-repeat; /* Prevents the image from repeating */
-      background-position: center; /* Centers the background image */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caleb | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLTBPyF9lZOJOws9AN4CeOUq8sMZ1fi1SFgg&usqp=CAU/10" alt="delicious dish" width="450" height="300"/>
-</div>
-  <hr />
-<h1>Eatery</h1>
-<hr />
-<p>An eatery<br /> This is a place where food and beverages are served to customers,<br /> often in a casual or informal setting. Eateries include :
-<ul><li>cafes,</li><li>diners,</li><li>and food stalls</li></ul> providing a range of dishes from snacks to full meals.<br /> Unlike formal restaurants, eateries often emphasize quick service<br /> and may have limited seating or takeout options,<br /> making them popular for convenient and affordable dining. <br />The atmosphere is usually relaxed, catering to a wide range of patrons.</p>
-  <img src="./fooood.jpg" alt="delicious dish" width="450" height="300"/>
-<h2>Caleb favorite foods</h2>
-<ol><li>Owo and Starch</li><li>Banga soap and Starch</li><li>Rice and Stew</li></ol>
-<hr />
-<ol>
-  <li><a draggable="true"><h2><a href=https://cookpad.com>Cook pad<a/></h2></a></li/></ol>
-  
-<ul>
-  <li>Owo</li><br />
-  <ol><li>palm oil </li>
-  <li>cray fish</li>
- <li>meat</li>
-  <li>flour</li>
-  <ul><li>cooked with turkey</li></ul></ol>
-<ul><li>home made</li>
-</ul>  
-  <li>And starch</li>
-</ul>
-   <img src="./food.jpg" alt="delicious dish" width="450" height="300"/>
-<ol start="2">
-<li><a draggable="true"><h2><a href=https://allnigerianfoods.com>Nigeria foods</a></h2></a></li>
-<li><a draggable="true"><h2><a href=https://www.delish.com>Tasty food</a></h2></a></li>
-</ol>
-<hr />
-  <br />
-  <br />
-  <br />
-  <a href="./about.html">about</a><br />
-<a href="./contact.html">contact</a>
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Caleb.dev</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="home">
+        <h2>Hello, I’m <span>Caleb</span></h2>
+        <p>A Website Developer & Software Enthusiast</p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate website developer with experience in building
+            responsive and user-friendly websites using modern web technologies.
+            I love learning, creating, and solving problems with code.
+        </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript (Basic)</li>
+            <li>Responsive Design</li>
+            <li>Website Security Basics</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-card">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio website built with HTML & CSS.</p>
+        </div>
+        <div class="project-card">
+            <h3>Business Website</h3>
+            <p>A simple business landing page design.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 Caleb. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
