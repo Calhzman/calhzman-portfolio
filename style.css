@@ -1,3 +1,27 @@
+/* General Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #f1c40f;
+    --background-color: #f6f2f2;
+    --text-color: #333;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Poppins', sans-serif;
+}
+.carousel {
+    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl6dzVlYWF5OWh2aW93N250cXc5Znc5YTdtMXRsNXp4bXRoejdvdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zEorcvY5LcWpEUR7dt/giphy.gif');
+    background-size: cover;
+  
+}
+
+section {
+    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl6dzVlYWF5OWh2aW93N250cXc5Znc5YTdtMXRsNXp4bXRoejdvdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zEorcvY5LcWpEUR7dt/giphy.gif');
+    background-size: cover;
+
+
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -5,39 +29,43 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #e5e5e5;
-    color: #2b2b2b;
+    font-family: var(--body-font);
+    background: var(--background-color);
+    color: var(--text-color);
     line-height: 1.7;
 }
 
 /* Header */
 header {
-    background: #2f2f2f;
+    background: var(--primary-color);
     padding: 18px 50px;
     position: sticky;
     top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--heading-font);
     font-size: 26px;
-    color: #f5f5f5;
+    color: var(--background-color);
 }
 
 .logo span {
-    color: #9c9c9c;
+    color: var(--accent-color);
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap; /* Allow list items to wrap */
 }
 
 nav ul li {
@@ -46,18 +74,22 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #dcdcdc;
+    color: #f5f5f5;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ffffff;
+    color: var(--accent-color);
 }
 
 /* Home */
 .home {
-    height: 90vh;
-    background: linear-gradient(135deg, #3a3a3a, #1f1f1f);
+    position: relative; /* Needed for the overlay */
+    height: 100vh;
+    background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGl6dzVlYWF5OWh2aW93N250cXc5Znc5YTdtMXRsNXp4bXRoejdvdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/zEorcvY5LcWpEUR7dt/giphy.gif');
+    background-size: cover;
+    background-position: center;
     color: #f5f5f5;
     display: flex;
     flex-direction: column;
@@ -66,8 +98,24 @@ nav ul li a:hover {
     text-align: center;
 }
 
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+.home h1, .home p, .home .btn {
+    position: relative;
+    z-index: 2; /* Ensure text and button are on top of the overlay */
+}
+
 .home h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--heading-font);
     font-size: 52px;
     margin-bottom: 10px;
 }
@@ -81,15 +129,17 @@ nav ul li a:hover {
 .btn {
     margin-top: 20px;
     padding: 12px 30px;
-    background: #b0b0b0;
-    color: #1a1a1a;
+    background: var(--accent-color);
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
     border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn:hover {
-    background: #d0d0d0;
+    background: #e0b800;
+    color: var(--primary-color);
 }
 
 /* Sections */
@@ -99,7 +149,7 @@ nav ul li a:hover {
 }
 
 .section h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--heading-font);
     font-size: 36px;
     margin-bottom: 20px;
 }
@@ -111,7 +161,7 @@ nav ul li a:hover {
 }
 
 .gray {
-    background: #dcdcdc;
+    background: #f7f7f7;
 }
 
 /* Cards */
@@ -120,15 +170,133 @@ nav ul li a:hover {
     justify-content: center;
     gap: 25px;
     margin-top: 40px;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
 }
 
 .card {
-    background: #f5f5f5;
+    background: #fff;
     padding: 30px;
     width: 230px;
     font-weight: 600;
     border-radius: 6px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-overlay h3 {
+    font-family: var(--heading-font);
+    font-size: 24px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
 
 /* Contact */
@@ -142,30 +310,66 @@ form textarea {
     width: 100%;
     padding: 12px;
     margin: 12px 0;
-    border: 1px solid #aaa;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font);
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
 }
 
 form button {
     width: 100%;
     padding: 12px;
-    background: #2f2f2f;
+    background: var(--primary-color);
     color: #fff;
     border: none;
     font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background: #1c1c1c;
+    background: var(--secondary-color);
 }
 
 /* Footer */
 footer {
-    background: #2f2f2f;
-    color: #d0d0d0;
+    background: var(--primary-color);
+    color: #f5f5f5;
     text-align: center;
     padding: 18px;
     font-size: 14px;
+}
+.carousel {
+    width: 100%;
+    max-width: 400px; /* Mobile size */
+    height: 250px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: slide 9s infinite;
+}
+
+.slides img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
 }
