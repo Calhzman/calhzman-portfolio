@@ -373,3 +373,93 @@ footer {
     66% { transform: translateX(-200%); }
     100% { transform: translateX(0); }
 }
+
+
+.calc {
+    background: #121212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    transition: 0.3s ease;
+}
+
+.calculator {
+    width: 340px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(144, 133, 133, 0.8);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+#display {
+    width: 100%;
+    height: 65px;
+    background: #222;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 28px;
+    text-align: right;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 12px;
+}
+
+button {
+    height: 60px;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
+}
+
+.number { background: #444; }
+.operator { background: #ff8c00; }
+.special { background: #555; }
+
+.glow { box-shadow: 0 0 20px #ff8c00; }
+
+/* Light Mode */
+.light {
+    background: #f5f5f5;
+}
+
+.light .calculator {
+    background: #fff;
+    box-shadow: 0 0 20px #bbb;
+}
+
+.light #display {
+    background: #ddd;
+    color: #000;
+}
+
+.light button {
+    color: #000;
+}
+
+.brand {
+    text-align: center;
+    margin-top: 10px;
+    color: brown;
+    font-size: 14px;
+}
+.light .brand { color: #000; }
