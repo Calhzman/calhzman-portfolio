@@ -60,7 +60,7 @@
         <div class="portfolio-grid">
             <div class="portfolio-item">
                 <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item 1">
-                <div class="portfolio-overlay"><h3>Project One</h3></div>
+                <div class="portfolio-overlay" ><h3 >Project One</h3></div>
             </div>
             <div class="portfolio-item">
                 <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item 2">
@@ -70,7 +70,96 @@
                 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Portfolio Item 3">
                 <div class="portfolio-overlay"><h3>Project Three</h3></div>
             </div>
+            <div id="calc">
+            <div class="calculator">
+
+                <input type="text" id="display" readonly>
+        
+                <div class="buttons">
+                    <button class="special" onclick="clearAll()">C</button>
+                    <button class="special" onclick="backspace()">⌫</button>
+                    <button class="special" onclick="percent()">%</button>
+                    <button class="operator">/</button>
+        
+                    <button class="number">7</button>
+                    <button class="number">8</button>
+                    <button class="number">9</button>
+                    <button class="operator">*</button>
+        
+                    <button class="number">4</button>
+                    <button class="number">5</button>
+                    <button class="number">6</button>
+                    <button class="operator">-</button>
+        
+                    <button class="number">1</button>
+                    <button class="number">2</button>
+                    <button class="number">3</button>
+                    <button class="operator">+</button>
+        
+                    <button class="special" onclick="sqrt()">√</button>
+                    <button class="number">0</button>
+                    <button class="special" onclick="toggleSign()">+/-</button>
+                    <button class="operator">=</button>
+                </div>
+            </div>
+        
+            <div class="brand">🔥PROJECT FOUR 
+                Created by Master Caleb 🔥</div>
+        
+            <script>
+                let display = document.getElementById("display");
+                let num1 = 0, num2 = 0, operator = "";
+        
+                document.querySelectorAll(".number, .operator").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        let value = this.innerText;
+        
+                        this.classList.add("glow");
+                        setTimeout(() => this.classList.remove("glow"), 200);
+        
+                        if (!isNaN(value) || value === ".") {
+                            display.value += value;
+                        }
+                        else if (value === "+" || value === "-" || value === "*" || value === "/") {
+                            num1 = parseFloat(display.value);
+                            operator = value;
+                            display.value = "";
+                        }
+                        else if (value === "=") {
+                            num2 = parseFloat(display.value);
+                            let result = 0;
+        
+                            if (operator === "+") result = num1 + num2;
+                            if (operator === "-") result = num1 - num2;
+                            if (operator === "*") result = num1 * num2;
+                            if (operator === "/") result = num2 !== 0 ? num1 / num2 : 0;
+        
+                            display.value = result;
+                            num1 = result;
+                        }
+                    });
+                });
+        
+                function clearAll() { display.value = ""; }
+        
+                function backspace() {
+                    display.value = display.value.slice(0, -1);
+                }
+        
+                function percent() {
+                    display.value = parseFloat(display.value) / 100;
+                }
+        
+                function sqrt() {
+                    display.value = Math.sqrt(parseFloat(display.value));
+                }
+        
+                function toggleSign() {
+                    display.value = parseFloat(display.value) * -1;
+                }
+            </script>
         </div>
+    </div>
     </section>
 
     <section id="contact" class="section">
@@ -89,3 +178,4 @@
 
 </body>
 </html>
+
