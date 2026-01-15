@@ -358,7 +358,7 @@ footer {
 .slides {
     display: flex;
     width: 300%;
-    animation: slide 9s infinite;
+    animation: slide 19s infinite;
 }
 
 .slides img {
